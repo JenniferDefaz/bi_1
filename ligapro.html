@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un dashboard demostrativo que aplica BI al fútbol ecuatoriano y a la LigaPro Serie A 2026.">
+  <title>BI aplicado a la LigaPro 2026 | BI al día</title>
+  <link rel="icon" href="img/bi-mark.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="js/ligapro-data.js" defer></script>
+  <script src="js/ligapro.js" defer></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-mark" aria-hidden="true"><i class="bi bi-bar-chart-line-fill"></i></span>BI al día</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavigation" aria-controls="siteNavigation" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="siteNavigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Fundamentos</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="ligapro.html">BI + LigaPro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pipeline">Pipeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#posiciones">Posiciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#decisiones-liga">Decisiones</a></li>
+          <li class="nav-item ms-lg-2"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" title="Cambiar tema"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i></button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero league-hero" id="inicio">
+      <div class="container hero-inner">
+        <span class="eyebrow">Datos para competir mejor</span>
+        <div class="season-stamp mb-3">SERIE A · TEMPORADA 2026</div>
+        <h1>BI aplicado a la <span>LigaPro</span></h1>
+        <p>Del resultado al siguiente movimiento. Un dashboard didáctico conecta rendimiento, scouting y operación para mostrar cómo el análisis de datos puede cambiar decisiones dentro y fuera de la cancha.</p>
+        <div class="hero-actions"><a class="btn btn-brand" href="#dashboard">Explorar el dashboard <i class="bi bi-arrow-down-right ms-1" aria-hidden="true"></i></a><a class="btn btn-outline-custom" href="index.html#etl">Repasar fundamentos</a></div>
+        <div class="hero-note"><i class="bi bi-info-circle-fill" aria-hidden="true"></i><span>Los datos deportivos de este folleto son ilustrativos y no representan estadísticas oficiales.</span></div>
+      </div>
+    </header>
+
+    <section class="section-tight" aria-labelledby="temporada-title">
+      <div class="container"><div class="row g-4 align-items-center">
+        <div class="col-lg-7 reveal"><span class="eyebrow">El contexto importa</span><h2 class="h3 mt-3" id="temporada-title">Una temporada de 30 fechas y una pausa global</h2><p class="mb-0">La temporada planteada inicia el 20 de febrero, pausa entre el 31 de mayo y el 1 de julio por el Mundial 2026, y continúa con hexagonales para definir al campeón en diciembre. Dieciséis clubes forman el escenario de análisis.</p></div>
+        <div class="col-lg-5 reveal"><div class="surface p-4"><strong>Clubes de Serie A 2026</strong><p class="small mt-2 mb-0">Independiente del Valle (campeón 2025), Liga de Quito, Barcelona SC, Emelec, Universidad Católica, Aucas, Deportivo Cuenca, Macará, Orense, Libertad, Mushuc Runa, Técnico Universitario, Manta FC, Daquilema FC (antes Delfín), Guayaquil City y Leones FC.</p></div></div>
+      </div></div>
+    </section>
+
+    <section class="section-tight surface-soft" id="pipeline">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">01 · ETL en el fútbol</span><h2 class="mt-3">Del partido al modelo analítico</h2><p class="lead-copy">Un flujo confiable transforma reportes de competición en métricas comparables para scouting, rendimiento y gestión.</p></div>
+        <div class="etl-flow reveal" aria-label="Pipeline de datos aplicado a LigaPro">
+          <div class="etl-node"><i class="bi bi-clipboard-data" aria-hidden="true"></i><strong>Resultados y eventos</strong></div>
+          <div class="etl-node"><i class="bi bi-funnel" aria-hidden="true"></i><strong>Limpieza y validación</strong></div>
+          <div class="etl-node"><i class="bi bi-diagram-3" aria-hidden="true"></i><strong>Modelo de partidos</strong></div>
+          <div class="etl-node"><i class="bi bi-speedometer2" aria-hidden="true"></i><strong>Dashboard de decisión</strong></div>
+        </div>
+        <p class="small mt-3 mb-0 reveal">Se normalizan nombres de clubes, se validan marcadores y fechas, y se relacionan partidos, equipos, sedes, eventos y asistencia antes de calcular KPI.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" id="dashboard">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">02 · Vista ejecutiva</span><h2 class="mt-3">El pulso del torneo</h2><p class="lead-copy">Filtra un club para destacar su rendimiento y ajusta el tramo de fechas para examinar la trayectoria.</p></div>
+        <div class="surface filter-bar mb-4 reveal"><div class="row g-3 align-items-end">
+          <div class="col-md-5"><label for="team-filter">Equipo seleccionado</label><select class="form-select" id="team-filter" aria-label="Filtrar dashboard por equipo"><option value="all">Todos los equipos</option></select></div>
+          <div class="col-md-7"><div class="d-flex justify-content-between"><label for="round-filter">Hasta la fecha</label><output id="round-output" for="round-filter">Fecha 30</output></div><input class="form-range" type="range" id="round-filter" min="1" max="30" value="30" aria-label="Seleccionar última fecha para evolución de puntos"><div class="d-flex justify-content-between small text-muted-custom"><span>F. 1</span><span>F. 30</span></div></div>
+        </div></div>
+        <div class="row g-3 mb-4" id="kpi-grid" aria-live="polite"></div>
+        <div class="row g-3">
+          <div class="col-lg-7 reveal"><article class="surface chart-card"><h3>Goles a favor y en contra</h3><p class="small">Ataque producido frente a goles concedidos en fase regular.</p><div class="chart-box"><canvas id="goals-chart" role="img" aria-label="Gráfico de goles a favor y en contra por equipo"></canvas></div><div class="chart-insight"><strong>Decisión:</strong> detectar necesidades de refuerzo ofensivo o ajustes defensivos. Un club seleccionado se resalta.</div></article></div>
+          <div class="col-lg-5 reveal"><article class="surface chart-card"><h3>Cómo terminan los partidos</h3><p class="small">Distribución de victorias locales, empates y victorias visitantes.</p><div class="chart-box"><canvas id="results-chart" role="img" aria-label="Gráfico de distribución de resultados"></canvas></div><div class="chart-insight"><strong>Decisión:</strong> evaluar ventaja de localía y orientar preparación de partidos.</div></article></div>
+          <div class="col-lg-7 reveal"><article class="surface chart-card"><h3>Puntos acumulados por fecha</h3><p class="small">Trayectoria de los cuatro equipos con mejor puntaje en el corte actual.</p><div class="chart-box"><canvas id="points-chart" role="img" aria-label="Gráfico de puntos acumulados por fecha"></canvas></div><div class="chart-insight"><strong>Decisión:</strong> distinguir consistencia de un buen cierre puntual y anticipar cambios de tendencia.</div></article></div>
+          <div class="col-lg-5 reveal"><article class="surface chart-card"><h3>Asistencia promedio</h3><p class="small">Espectadores promedio por encuentro como indicador de convocatoria.</p><div class="chart-box"><canvas id="attendance-chart" role="img" aria-label="Gráfico de asistencia promedio por equipo"></canvas></div><div class="chart-insight"><strong>Decisión:</strong> comparar demanda por plaza y ajustar campañas, horarios o aforo.</div></article></div>
+          <div class="col-lg-6 reveal"><article class="surface chart-card"><h3>Perfil comparado de equipos</h3><p class="small">Escala relativa de 0 a 100 para cinco dimensiones de rendimiento.</p><div class="row g-2"><div class="col-6"><label class="visually-hidden" for="radar-team-a">Primer equipo</label><select class="form-select form-select-sm" id="radar-team-a" aria-label="Elegir primer equipo para comparar"></select></div><div class="col-6"><label class="visually-hidden" for="radar-team-b">Segundo equipo</label><select class="form-select form-select-sm" id="radar-team-b" aria-label="Elegir segundo equipo para comparar"></select></div></div><div class="chart-box"><canvas id="radar-chart" role="img" aria-label="Gráfico radar comparativo de dos equipos"></canvas></div><div class="chart-insight"><strong>Decisión:</strong> identificar fortalezas y brechas para el scouting o la planificación táctica.</div></article></div>
+          <div class="col-lg-6 reveal"><article class="surface chart-card"><h3>Goles por región</h3><p class="small">Distribución estimada de goles marcados por clubes de Costa y Sierra.</p><div class="chart-box"><canvas id="region-chart" role="img" aria-label="Gráfico de goles por región"></canvas></div><div class="chart-insight"><strong>Decisión:</strong> dar contexto regional al análisis de rendimiento y a la planificación de viajes.</div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad surface-soft" id="posiciones">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">03 · Lectura de tabla</span><h2 class="mt-3">Posiciones interactivas</h2><p class="lead-copy">Ordena por cualquier columna o busca un club. Las zonas son una representación didáctica, sujeta al formato reglamentario.</p></div>
+        <div class="row align-items-end g-3 mb-3 reveal"><div class="col-md-6"><label class="form-label" for="team-search">Buscar equipo</label><input class="form-control" type="search" id="team-search" placeholder="Ej.: Aucas" autocomplete="off"></div><div class="col-md-6"><div class="zone-legend justify-content-md-end"><span><i class="zone-key zone-key-title"></i>Zona de título</span><span><i class="zone-key zone-key-cup"></i>Copas internacionales</span><span><i class="zone-key zone-key-drop"></i>Zona de permanencia</span></div></div></div>
+        <div class="standings-wrap reveal"><table class="table table-custom table-hover standings-table" id="standings-table"><thead><tr><th scope="col"><button type="button" data-sort="position" aria-label="Ordenar por posición">Pos. <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="name" aria-label="Ordenar por equipo">Equipo <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="played" aria-label="Ordenar por partidos jugados">PJ <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="wins" aria-label="Ordenar por victorias">G <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="draws" aria-label="Ordenar por empates">E <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="losses" aria-label="Ordenar por derrotas">P <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="gf" aria-label="Ordenar por goles a favor">GF <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="ga" aria-label="Ordenar por goles en contra">GC <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="gd" aria-label="Ordenar por diferencia de goles">DG <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th><th scope="col"><button type="button" data-sort="points" aria-label="Ordenar por puntos">Pts <i class="bi bi-arrow-down-up" aria-hidden="true"></i></button></th></tr></thead><tbody id="standings-body"></tbody></table></div>
+        <p class="small mt-2 mb-0">PJ: partidos jugados · G: ganados · E: empatados · P: perdidos · GF/GC: goles a favor/en contra · DG: diferencia.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" id="decisiones-liga">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">04 · De la evidencia a la cancha</span><h2 class="mt-3">Decisiones que puede habilitar el BI</h2><p class="lead-copy">El dashboard no decide por las personas: les ayuda a plantear mejores preguntas, contrastar alternativas y revisar resultados.</p></div>
+        <div class="row g-3">
+          <div class="col-md-6 reveal"><article class="surface decision-example"><span class="eyebrow">Estratégica · directiva</span><h3 class="h5 mt-2">¿Dónde invertir para la próxima temporada?</h3><p class="mb-0">Combinar tendencias de rendimiento, asistencia y potencial de convocatoria para priorizar presupuesto de plantel e infraestructura.</p></article></div>
+          <div class="col-md-6 reveal"><article class="surface decision-example"><span class="eyebrow">Táctica · cuerpo técnico</span><h3 class="h5 mt-2">¿Qué perfil reforzar en el mercado?</h3><p class="mb-0">Cruzar goles concedidos, generación ofensiva y comparación radar para identificar la brecha más relevante por posición.</p></article></div>
+          <div class="col-md-6 reveal"><article class="surface decision-example"><span class="eyebrow">Operativa · partido</span><h3 class="h5 mt-2">¿Cómo preparar el siguiente encuentro?</h3><p class="mb-0">Revisar tendencias por localía y forma reciente para adaptar sesiones, cargas y plan de juego de la semana.</p></article></div>
+          <div class="col-md-6 reveal"><article class="surface decision-example"><span class="eyebrow">Operativa · comercial</span><h3 class="h5 mt-2">¿Cómo mejorar la experiencia en el estadio?</h3><p class="mb-0">Observar asistencia por plaza para ajustar comunicación, servicios, horarios y previsión de aforo.</p></article></div>
+        </div>
+        <p class="small mt-4 reveal">En cada caso, el ciclo de Simon ayuda a definir el problema, diseñar alternativas, elegir una acción e implementar/revisar su impacto con nuevos KPI.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>BI al día · Datos ilustrativos para aprendizaje</span><div class="d-flex gap-3"><a href="index.html">Fundamentos</a><a href="ligapro.html">BI + LigaPro</a><a href="#inicio">Volver arriba</a></div></div></footer>
+</body>
+</html>

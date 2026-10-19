@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Aprende los fundamentos de Inteligencia de Negocios, toma de decisiones y procesos ETL con un cuestionario interactivo.">
+	<title>Fundamentos de Inteligencia de Negocios | BI al día</title>
+	<link rel="icon" href="img/bi-mark.svg" type="image/svg+xml">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+	<script src="js/main.js" defer></script>
+	<script src="js/quiz-data.js" defer></script>
+	<script src="js/quiz.js" defer></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Navegación principal">
+		<div class="container">
+			<a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-mark" aria-hidden="true"><i class="bi bi-bar-chart-line-fill"></i></span>BI al día</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavigation" aria-controls="siteNavigation" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="siteNavigation">
+				<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+					<li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Fundamentos</a></li>
+					<li class="nav-item"><a class="nav-link" href="ligapro.html">BI + LigaPro</a></li>
+					<li class="nav-item"><a class="nav-link" href="#que-es-bi">¿Qué es BI?</a></li>
+					<li class="nav-item"><a class="nav-link" href="#decisiones">Decisiones</a></li>
+					<li class="nav-item"><a class="nav-link" href="#etl">ETL</a></li>
+					<li class="nav-item"><a class="nav-link" href="#cuestionario">Cuestionario</a></li>
+					<li class="nav-item ms-lg-2"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" title="Cambiar tema"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i></button></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<header class="hero" id="inicio">
+			<div class="container hero-inner">
+				<span class="eyebrow">De los datos a mejores decisiones</span>
+				<h1>Fundamentos de <span>Inteligencia de Negocios</span></h1>
+				<p>Convierte datos dispersos en conocimiento accionable. Explora los conceptos esenciales de BI, decisiones y ETL, y pon a prueba lo aprendido.</p>
+				<div class="hero-actions">
+					<a class="btn btn-brand" href="#que-es-bi">Aprender <i class="bi bi-arrow-down-right ms-1" aria-hidden="true"></i></a>
+					<a class="btn btn-outline-custom" href="#cuestionario">Jugar el cuestionario <i class="bi bi-controller ms-1" aria-hidden="true"></i></a>
+				</div>
+				<div class="hero-note"><i class="bi bi-lightbulb-fill" aria-hidden="true"></i><span>Una guía práctica para pensar con datos, no solo mirarlos.</span></div>
+			</div>
+		</header>
+
+		<section class="section-pad" id="que-es-bi">
+			<div class="container">
+				<div class="section-heading reveal">
+					<span class="eyebrow">01 · Fundamentos</span>
+					<h2 class="mt-3">¿Qué es BI?</h2>
+					<p class="lead-copy">La Inteligencia de Negocios (Business Intelligence) reúne procesos, datos y herramientas para transformar información en mejores decisiones. No es solo un tablero: es una capacidad organizacional.</p>
+				</div>
+				<div class="row g-3 mb-5">
+					<div class="col-md-4 reveal"><article class="surface content-card"><span class="icon-box"><i class="bi bi-bullseye" aria-hidden="true"></i></span><h3>Objetivo</h3><p>Entender qué ocurre en el negocio, por qué ocurre y dónde actuar con evidencia oportuna y confiable.</p></article></div>
+					<div class="col-md-4 reveal"><article class="surface content-card"><span class="icon-box"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><h3>Integración</h3><p>Conectar fuentes diversas, darles contexto común y facilitar el acceso a quienes necesitan decidir.</p></article></div>
+					<div class="col-md-4 reveal"><article class="surface content-card"><span class="icon-box"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i></span><h3>Beneficio</h3><p>Detectar oportunidades y riesgos, mejorar procesos y alinear acciones con las metas estratégicas.</p></article></div>
+				</div>
+				<div class="row align-items-center g-5">
+					<div class="col-lg-5 reveal"><span class="eyebrow">Del dato a la acción</span><h3 class="mt-3">La pirámide DIKW</h3><p>El valor se construye por capas: el contexto convierte datos en información; la experiencia permite aprender; el criterio aplica ese aprendizaje con propósito.</p></div>
+					<div class="col-lg-7 reveal"><div class="dikw" aria-label="Pirámide DIKW: Datos, Información, Conocimiento y Sabiduría"><div class="dikw-step">Sabiduría<small>¿Qué conviene hacer?</small></div><div class="dikw-step">Conocimiento<small>¿Qué patrón entendemos?</small></div><div class="dikw-step">Información<small>¿Qué significa el dato?</small></div><div class="dikw-step">Datos<small>Hechos registrados</small></div></div></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-pad surface-soft" id="decisiones">
+			<div class="container">
+				<div class="section-heading reveal"><span class="eyebrow">02 · Decidir mejor</span><h2 class="mt-3">La decisión correcta, en el nivel correcto</h2><p class="lead-copy">BI reduce la incertidumbre al poner evidencia relevante frente a las personas que pueden convertirla en acción.</p></div>
+				<div class="row g-3 mb-5">
+					<div class="col-md-4 reveal"><article class="surface content-card decision-card"><span class="eyebrow">Largo plazo</span><h3>Estratégicas</h3><p>Definen rumbo y asignación de recursos. <strong>Ejemplo:</strong> abrir operaciones en otro país.</p><p class="mb-0"><strong>Decide:</strong> dirección ejecutiva y consejo.</p></article></div>
+					<div class="col-md-4 reveal"><article class="surface content-card decision-card"><span class="eyebrow">Mediano plazo</span><h3>Tácticas</h3><p>Traducen estrategia en planes de área. <strong>Ejemplo:</strong> redistribuir presupuesto entre canales.</p><p class="mb-0"><strong>Decide:</strong> gerencias y jefaturas.</p></article></div>
+					<div class="col-md-4 reveal"><article class="surface content-card decision-card"><span class="eyebrow">Día a día</span><h3>Operativas</h3><p>Resuelven la ejecución cotidiana. <strong>Ejemplo:</strong> reponer un producto con stock bajo.</p><p class="mb-0"><strong>Decide:</strong> supervisores y equipos operativos.</p></article></div>
+				</div>
+				<div class="row g-4 mb-5">
+					<div class="col-lg-5 reveal"><h3 class="h4">Grado de estructura</h3><div class="surface p-4"><p><strong>Estructuradas:</strong> reglas conocidas y repetibles, como aprobar un crédito bajo un umbral.</p><p><strong>Semiestructuradas:</strong> combinan reglas y criterio, como priorizar una campaña.</p><p class="mb-0"><strong>No estructuradas:</strong> problemas nuevos o ambiguos, como definir una nueva línea de negocio.</p></div></div>
+					<div class="col-lg-7 reveal"><h3 class="h4">Modelo de Herbert Simon</h3><p>Selecciona una fase para explorar el ciclo de decisión.</p><div class="phase-list" role="tablist" aria-label="Fases del modelo de Simon"><button class="phase-button" type="button" role="tab" id="phase-tab-inteligencia" aria-controls="phase-detail" aria-selected="true" data-phase="inteligencia">1. Inteligencia</button><button class="phase-button" type="button" role="tab" id="phase-tab-diseno" aria-controls="phase-detail" aria-selected="false" data-phase="diseno">2. Diseño</button><button class="phase-button" type="button" role="tab" id="phase-tab-eleccion" aria-controls="phase-detail" aria-selected="false" data-phase="eleccion">3. Elección</button><button class="phase-button" type="button" role="tab" id="phase-tab-implementacion" aria-controls="phase-detail" aria-selected="false" data-phase="implementacion">4. Implementación</button></div><div class="surface phase-detail" id="phase-detail" role="tabpanel" aria-labelledby="phase-tab-inteligencia" tabindex="0"><h4 class="h5">Inteligencia</h4><p class="mb-0">Explorar el entorno para identificar y definir el problema. BI ayuda a detectar desviaciones y tendencias.</p></div></div>
+				</div>
+				<div class="row g-4 align-items-start">
+					<div class="col-lg-7 reveal"><h3 class="h4">Datos e intuición se complementan</h3><div class="table-responsive surface"><table class="table table-custom table-striped mb-0"><thead><tr><th scope="col">Criterio</th><th scope="col">Basada en datos</th><th scope="col">Basada en intuición</th></tr></thead><tbody><tr><th scope="row">Evidencia</th><td>Indicadores y análisis verificables</td><td>Experiencia y percepción personal</td></tr><tr><th scope="row">Fortaleza</th><td>Consistencia y trazabilidad</td><td>Rapidez ante lo nuevo</td></tr><tr><th scope="row">Riesgo</th><td>Datos sesgados o incompletos</td><td>Sesgos cognitivos y memoria selectiva</td></tr><tr><th scope="row">Mejor uso</th><td>Patrones medibles y seguimiento</td><td>Hipótesis que luego se contrastan</td></tr></tbody></table></div></div>
+					<div class="col-lg-5 reveal"><article class="surface p-4"><span class="icon-box"><i class="bi bi-speedometer2" aria-hidden="true"></i></span><h3 class="h4 mt-3">KPI + dashboards</h3><p class="mb-0">Un KPI cuantifica un objetivo crítico; un dashboard reúne indicadores y contexto para vigilar el desempeño. El diseño útil destaca excepciones, tendencias y una acción posible, no solo acumula gráficos.</p></article></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-pad" id="etl">
+			<div class="container">
+				<div class="section-heading reveal"><span class="eyebrow">03 · Datos listos para decidir</span><h2 class="mt-3">El proceso ETL</h2><p class="lead-copy">Extraer, transformar y cargar organiza los datos antes de analizarlos. Selecciona una etapa para ver su función.</p></div>
+				<div class="etl-flow reveal" aria-label="Flujo ETL interactivo">
+					<button class="etl-node" type="button" data-etl="fuentes" aria-pressed="true"><i class="bi bi-database" aria-hidden="true"></i><strong>Fuentes</strong><span class="small">BD · Excel · APIs · CSV</span></button>
+					<button class="etl-node" type="button" data-etl="extraccion" aria-pressed="false"><i class="bi bi-box-arrow-in-down" aria-hidden="true"></i><strong>Extracción</strong></button>
+					<button class="etl-node" type="button" data-etl="staging" aria-pressed="false"><i class="bi bi-inboxes" aria-hidden="true"></i><strong>Staging</strong></button>
+					<button class="etl-node" type="button" data-etl="transformacion" aria-pressed="false"><i class="bi bi-arrow-left-right" aria-hidden="true"></i><strong>Transformación</strong></button>
+					<button class="etl-node" type="button" data-etl="carga" aria-pressed="false"><i class="bi bi-cloud-arrow-up" aria-hidden="true"></i><strong>Carga</strong></button>
+					<button class="etl-node" type="button" data-etl="almacen" aria-pressed="false"><i class="bi bi-building" aria-hidden="true"></i><strong>Data Warehouse / Mart</strong></button>
+					<button class="etl-node" type="button" data-etl="analisis" aria-pressed="false"><i class="bi bi-bar-chart-line" aria-hidden="true"></i><strong>Reportes y dashboards</strong></button>
+				</div>
+				<div class="surface etl-detail reveal" id="etl-detail" aria-live="polite"><strong>Fuentes:</strong> sistemas transaccionales, archivos y servicios externos aportan los datos que necesita el análisis.</div>
+				<div class="row g-4 mt-4">
+					<div class="col-lg-6 reveal"><div class="accordion" id="etlAccordion">
+						<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#extractContent" aria-expanded="true" aria-controls="extractContent">Extracción: completa o incremental</button></h3><div id="extractContent" class="accordion-collapse collapse show" data-bs-parent="#etlAccordion"><div class="accordion-body"><strong>Completa:</strong> lee todo el conjunto; es sencilla, pero costosa. <strong>Incremental:</strong> trae solo altas o cambios desde la última carga; requiere una marca de tiempo o mecanismo de cambios.</div></div></div>
+						<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transformContent" aria-expanded="false" aria-controls="transformContent">Transformación y ejemplo</button></h3><div id="transformContent" class="accordion-collapse collapse" data-bs-parent="#etlAccordion"><div class="accordion-body"><p>Limpieza, deduplicación, estandarización, validación, cálculos derivados y agregaciones preparan datos para el análisis.</p><div class="table-responsive"><table class="table table-sm table-custom etl-table mb-0"><thead><tr><th scope="col">Dato sucio</th><th scope="col">Dato limpio</th></tr></thead><tbody><tr><td>" quito ", "2026/2/3", "USD 1,2O0"</td><td>Quito, 2026-02-03, 1200.00</td></tr><tr><td>Cliente repetido / correo vacío</td><td>Duplicado consolidado / nulo validado</td></tr></tbody></table></div></div></div></div>
+						<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#loadContent" aria-expanded="false" aria-controls="loadContent">Carga, ETL vs. ELT</button></h3><div id="loadContent" class="accordion-collapse collapse" data-bs-parent="#etlAccordion"><div class="accordion-body"><p><strong>Completa:</strong> reemplaza el destino; <strong>incremental:</strong> inserta o actualiza cambios. ETL transforma antes de cargar; ELT carga primero y transforma dentro del destino.</p><div class="table-responsive"><table class="table table-sm table-custom etl-table mb-0"><thead><tr><th scope="col">ETL</th><th scope="col">ELT</th></tr></thead><tbody><tr><td>Transformación antes del almacén</td><td>Transformación en el almacén</td></tr><tr><td>Control y modelado previo</td><td>Escala con plataformas modernas</td></tr></tbody></table></div></div></div></div>
+					</div></div>
+					<div class="col-lg-6 reveal"><article class="surface p-4 h-100"><span class="eyebrow">Confianza en los resultados</span><h3 class="h4 mt-2">Calidad de datos</h3><div class="row g-3 mt-1"><div class="col-6"><strong>Exactitud</strong><p class="small">¿Refleja la realidad?</p></div><div class="col-6"><strong>Completitud</strong><p class="small">¿Faltan valores clave?</p></div><div class="col-6"><strong>Consistencia</strong><p class="small">¿Coincide entre sistemas?</p></div><div class="col-6"><strong>Oportunidad</strong><p class="small">¿Está disponible a tiempo?</p></div></div><hr><h3 class="h5">Herramientas comunes</h3><div class="row g-2"><div class="col-6"><div class="surface-soft tool-chip"><strong>Power Query / BI</strong><span class="small">Preparación visual y análisis</span></div></div><div class="col-6"><div class="surface-soft tool-chip"><strong>SSIS</strong><span class="small">Integración del ecosistema SQL</span></div></div><div class="col-6"><div class="surface-soft tool-chip"><strong>Pentaho / Talend</strong><span class="small">Integración y calidad de datos</span></div></div><div class="col-6"><div class="surface-soft tool-chip"><strong>Apache Airflow</strong><span class="small">Orquestación de flujos</span></div></div></div></article></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-pad surface-soft" id="cuestionario">
+			<div class="container">
+				<div class="section-heading reveal"><span class="eyebrow">04 · Aprende jugando</span><h2 class="mt-3">Reto de Inteligencia de Negocios</h2><p class="lead-copy">Diez preguntas, tres vidas y una oportunidad de demostrar que sabes convertir datos en decisiones.</p></div>
+				<div class="row g-4 align-items-start">
+					<div class="col-lg-8 reveal"><section class="surface quiz-shell" aria-label="Cuestionario de BI">
+						<div class="quiz-head"><div><strong id="quiz-heading">¿Listo para el reto?</strong><div class="small text-muted-custom" id="quiz-subheading">Elige tu modo y empieza cuando quieras.</div></div><div class="quiz-score" id="quiz-score" aria-live="polite">0 pts</div></div>
+						<div class="quiz-body" id="quiz-content">
+							<form id="quiz-start-form" class="row g-3">
+								<div class="col-md-6"><label class="form-label" for="player-name">Nombre o alias</label><input class="form-control" id="player-name" name="player" maxlength="20" autocomplete="nickname" required></div>
+								<div class="col-md-6"><label class="form-label" for="quiz-mode">Modo de juego</label><select class="form-select" id="quiz-mode" name="mode"><option value="practice">Práctica · sin tiempo</option><option value="challenge">Desafío · 20 segundos</option></select></div>
+								<div class="col-12"><button class="btn btn-brand" type="submit">Comenzar partida <i class="bi bi-play-fill" aria-hidden="true"></i></button></div>
+							</form>
+						</div>
+					</section></div>
+					<aside class="col-lg-4 reveal"><div class="surface p-4"><span class="eyebrow">Mejores puntajes</span><h3 class="h4 mt-2">Ranking local</h3><ol class="rank-list" id="quiz-ranking" aria-live="polite"><li>Aún no hay partidas guardadas.</li></ol><p class="small mt-3 mb-0">El ranking se guarda en este navegador.</p></div></aside>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>BI al día · Aprender a decidir con datos</span><div class="d-flex gap-3"><a href="index.html">Fundamentos</a><a href="ligapro.html">BI + LigaPro</a><a href="#inicio">Volver arriba</a></div></div></footer>
+</body>
+</html>
