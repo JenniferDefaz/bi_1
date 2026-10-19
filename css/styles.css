@@ -309,25 +309,31 @@ a:hover { color: var(--brand-strong); }
   --silabo-u2: #edc363;
   --silabo-u3: #ff8e76;
 }
-.silabo-hero { min-height: 620px; background: var(--surface-alt); }
+.silabo-hero { min-height: 620px; color: #eff6fc; background: #142c43; }
 .silabo-hero::before { width: min(58%, 780px); background: repeating-linear-gradient(135deg, transparent 0 20px, color-mix(in srgb, var(--brand) 20%, transparent) 21px 23px, transparent 24px 44px); }
+.silabo-hero .eyebrow { color: #a7d6ff; }
 .silabo-hero h1 { max-width: 920px; font-size: clamp(2.25rem, 5.2vw, 4.8rem); }
+.silabo-hero h1 span { color: #a7d6ff; }
 .silabo-hero > .hero-inner > p { max-width: 720px; }
+.silabo-hero p { color: #cfdeed; }
 .silabo-hero-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.4rem; }
-.silabo-hero-meta span { padding: .35rem .65rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-size: .86rem; font-weight: 700; }
+.silabo-hero-meta span { padding: .35rem .65rem; color: #eff6fc; background: rgba(255, 255, 255, .08); border: 1px solid rgba(207, 222, 237, .3); border-radius: 6px; font-size: .86rem; font-weight: 700; }
 .technical-card { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: .35rem .85rem; height: 100%; min-height: 112px; padding: 1rem; }
+.technical-card, .hours-counter, .purpose-card, .silabo-chart-card { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.technical-card:hover, .purpose-card:hover, .silabo-chart-card:hover { transform: translateY(-3px); border-color: var(--brand); box-shadow: 0 14px 34px rgba(25, 53, 75, .13); }
 .technical-card .icon-box { grid-row: span 2; }
 .technical-label { color: var(--muted); font-size: .78rem; font-weight: 700; }
 .technical-card strong { line-height: 1.35; overflow-wrap: anywhere; }
-.hours-counter { display: grid; min-height: 140px; padding: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; text-align: center; }
+.hours-counter { display: grid; min-height: 140px; padding: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--brand); border-radius: 8px; text-align: center; }
+.hours-counter:hover { transform: translateY(-3px); }
 .hours-counter > span { color: var(--muted); font-size: .86rem; font-weight: 700; }
 .hours-counter > span i { color: var(--brand); }
 .hours-counter strong { color: var(--brand); font-family: 'Manrope', sans-serif; font-size: 2.3rem; line-height: 1.1; }
 .hours-counter small { color: var(--muted); }
-.purpose-card { height: 100%; padding: 1.4rem; }
+.purpose-card { height: 100%; padding: 1.4rem; border-top: 3px solid var(--brand); }
 .purpose-card h3 { margin: 1.1rem 0 .6rem; font-size: 1.12rem; }
 .purpose-card p { margin: 0; }
-.silabo-chart-card { height: 100%; padding: 1.3rem; }
+.silabo-chart-card { height: 100%; padding: 1.3rem; border-top: 3px solid var(--brand); }
 .silabo-chart-card h3 { margin-bottom: .35rem; font-size: 1.08rem; }
 .silabo-chart-card > p { margin-bottom: .7rem; }
 .silabo-chart-box { position: relative; height: 300px; }
@@ -336,11 +342,14 @@ a:hover { color: var(--brand-strong); }
 .unit-chart-legend span { display: inline-flex; align-items: center; gap: .4rem; color: var(--muted); font-size: .78rem; font-weight: 700; }
 .unit-chart-legend i { width: 11px; height: 11px; background: var(--unit-color); border-radius: 3px; }
 .silabo-unit-tabs { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1rem; }
-.unit-tab { padding: .75rem 1rem; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; font-weight: 700; }
+.unit-tab { padding: .75rem 1rem; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; font-weight: 700; transition: color .18s ease, background-color .18s ease, transform .18s ease; }
+.unit-tab:hover { transform: translateY(-2px); border-color: var(--brand); }
 .unit-tab[aria-selected="true"] { color: #fff; background: var(--brand); border-color: var(--brand); }
 :root[data-theme="dark"] .unit-tab[aria-selected="true"] { color: #102033; }
 .unit-panel[hidden] { display: none; }
-.unit-overview { padding: clamp(1rem, 3vw, 1.7rem); }
+.unit-overview { padding: clamp(1rem, 3vw, 1.7rem); border-top: 4px solid var(--brand); }
+.unit-panel:not([hidden]) { animation: unit-panel-enter .3s ease both; }
+@keyframes unit-panel-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .unit-title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
 .unit-title-row h3 { max-width: 760px; margin: .65rem 0 0; font-size: clamp(1.25rem, 2.4vw, 1.8rem); }
 .unit-weight-label { flex: 0 0 auto; color: var(--brand); font-weight: 800; }
@@ -367,7 +376,7 @@ a:hover { color: var(--brand-strong); }
 .silabo-badge--muted { color: var(--muted); background: var(--surface-alt); }
 .unit-total-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1rem; margin-top: 1.2rem; padding-top: .9rem; border-top: 1px solid var(--line); font-size: .86rem; }
 .unit-total-row strong { color: var(--brand); }
-.calendar-summary, .calendar-track { height: 100%; padding: 1.4rem; }
+.calendar-summary, .calendar-track { height: 100%; padding: 1.4rem; border-top: 3px solid var(--brand); }
 .calendar-summary h3 { color: var(--brand); font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; }
 .calendar-summary > p { color: var(--muted); }
 .countdown-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: 1.2rem 0; }
@@ -436,10 +445,9 @@ a:hover { color: var(--brand-strong); }
 .question-feedback.is-correct { color: #2470aa; }
 .question-feedback.is-incorrect { color: #b74638; }
 .silabo-quiz-result { min-height: 44px; padding: .7rem 1.25rem; color: var(--brand); border-top: 1px solid var(--line); font-weight: 700; }
-.silabo-print-end { display: flex; justify-content: center; padding: 0 1rem 4rem; }
 .silabo-reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .silabo-reveal.is-visible { opacity: 1; transform: none; }
-.silabo-print:focus-visible, .unit-tab:focus-visible, .skill-flip:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.unit-tab:focus-visible, .skill-flip:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
 @media (max-width: 767.98px) {
   .silabo-hero { min-height: 640px; }
   .unit-title-row { align-items: flex-start; flex-direction: column; }
@@ -464,26 +472,5 @@ a:hover { color: var(--brand-strong); }
 }
 @media (prefers-reduced-motion: reduce) {
   .silabo-reveal { opacity: 1; transform: none; }
-  .skill-flip-inner { transition: none; }
-}
-@media print {
-  .silabo-hero { min-height: 0; color: #172638; background: #fff; }
-  .silabo-hero::before { display: none; }
-  .silabo-hero .hero-inner { padding-block: 1rem; }
-  .silabo-hero-meta span { padding: .1rem .4rem; }
-  .silabo-hero h1 { font-size: 24pt; }
-  .silabo-print, .site-nav, .site-footer, .silabo-print-end { display: none !important; }
-  .silabo-unit-tabs { display: none !important; }
-  .silabo-reveal, .reveal { opacity: 1 !important; transform: none !important; }
-  .section-pad { padding-block: 1rem; }
-  .surface, .surface-soft, .skill-face { box-shadow: none; break-inside: avoid; }
-  .unit-panel[hidden] { display: block !important; }
-  .unit-panel + .unit-panel { margin-top: 1rem; }
-  .skill-flip, .skill-flip-inner { min-height: 0; height: auto; padding: 0; background: transparent; border: 0; box-shadow: none; cursor: default; transform: none !important; }
-  .skill-face { position: static; display: flex; min-height: 0; margin-bottom: .5rem; transform: none; backface-visibility: visible; }
-  .skill-face-front { display: none; }
-  .silabo-option input { display: none; }
-  .silabo-chart-box { height: 220px; }
-  .silabo-chart-box--topics { height: 470px; }
-  a { color: #124f85; }
+  .skill-flip-inner, .technical-card, .hours-counter, .purpose-card, .silabo-chart-card, .unit-tab, .unit-panel:not([hidden]) { transition: none; animation: none; }
 }

@@ -314,6 +314,5 @@
   observeDynamicReveals();
 
   window.addEventListener('bi-theme-change', renderCharts);
-  document.querySelectorAll('[data-print-silabo]').forEach((button) => button.addEventListener('click', () => window.print()));
   window.setInterval(renderTimeline, 60000);
 })();
