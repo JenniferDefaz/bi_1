@@ -19,7 +19,7 @@
       const dark = selectedTheme === 'dark';
       button.setAttribute('aria-label', dark ? 'Activar modo claro' : 'Activar modo oscuro');
       button.title = dark ? 'Activar modo claro' : 'Activar modo oscuro';
-      button.innerHTML = `<i class="bi ${dark ? 'bi-sun-fill' : 'bi-moon-stars-fill'}" aria-hidden="true"></i>`;
+      button.innerHTML = `<i class="bi ${dark ? 'bi-sun-fill' : 'bi-moon-stars-fill'}" aria-hidden="true"></i><span>${dark ? 'Modo claro' : 'Modo oscuro'}</span>`;
     });
     try {
       localStorage.setItem(themeKey, selectedTheme);
@@ -37,7 +37,7 @@
     const dark = preferredTheme === 'dark';
     button.setAttribute('aria-label', dark ? 'Activar modo claro' : 'Activar modo oscuro');
     button.title = dark ? 'Activar modo claro' : 'Activar modo oscuro';
-    button.innerHTML = `<i class="bi ${dark ? 'bi-sun-fill' : 'bi-moon-stars-fill'}" aria-hidden="true"></i>`;
+    button.innerHTML = `<i class="bi ${dark ? 'bi-sun-fill' : 'bi-moon-stars-fill'}" aria-hidden="true"></i><span>${dark ? 'Modo claro' : 'Modo oscuro'}</span>`;
     button.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   });
 

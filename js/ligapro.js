@@ -241,6 +241,8 @@
   radarTeamB.addEventListener('change', renderCharts);
   window.addEventListener('bi-theme-change', applyChartTheme);
 
+  document.querySelector('#export-dashboard')?.addEventListener('click', () => window.print());
+
   populateTeamSelects();
   refreshDashboard();
 })();

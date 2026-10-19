@@ -70,7 +70,7 @@ a:hover { color: var(--brand-strong); }
 .navbar-toggler { border-color: var(--line); }
 .navbar-toggler-icon { filter: var(--toggler-filter, none); }
 :root[data-theme="dark"] { --toggler-filter: invert(1); }
-.theme-toggle { width: 42px; height: 42px; display: inline-grid; place-items: center; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 50%; }
+.theme-toggle { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .45rem .7rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; font-size: .88rem; font-weight: 700; white-space: nowrap; }
 .theme-toggle:hover { color: var(--brand); border-color: var(--brand); }
 
 .section-pad { padding-block: clamp(4rem, 8vw, 7rem); }
@@ -228,6 +228,9 @@ a:hover { color: var(--brand-strong); }
 .chart-insight { padding: .8rem; background: var(--surface-alt); border-left: 3px solid var(--brand); border-radius: 0 6px 6px 0; font-size: .9rem; }
 .chart-insight strong { color: var(--ink); }
 .filter-bar { padding: 1rem; }
+.dashboard-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 2.5rem; }
+.dashboard-heading .section-heading { margin-bottom: 0; }
+.dashboard-export { flex: 0 0 auto; margin-bottom: .35rem; }
 .filter-bar label { display: block; margin-bottom: .35rem; color: var(--muted); font-size: .8rem; font-weight: 700; }
 .form-control, .form-select { color: var(--ink); background-color: var(--surface); border-color: var(--line); }
 .form-control:focus, .form-select:focus { color: var(--ink); background-color: var(--surface); border-color: var(--brand); box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--brand) 20%, transparent); }
@@ -256,8 +259,26 @@ a:hover { color: var(--brand-strong); }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
+@media print {
+  @page { size: landscape; margin: 12mm; }
+  body > nav, body > footer, main > :not(#dashboard) { display: none !important; }
+  #dashboard { padding-block: 0 !important; }
+  #dashboard .container { width: 100%; max-width: none; }
+  #dashboard .dashboard-export, #dashboard .filter-bar, #dashboard .chart-card select { display: none !important; }
+  #dashboard .dashboard-heading { margin-bottom: 1rem; }
+  #dashboard .section-heading { max-width: none; }
+  #dashboard .section-heading h2 { margin-block: .4rem !important; font-size: 24pt; }
+  #dashboard .section-heading .lead-copy { margin-bottom: 0; font-size: 10pt; }
+  #dashboard .surface { box-shadow: none; break-inside: avoid; }
+  #dashboard .chart-box { height: 190px; }
+  #dashboard .chart-insight { font-size: 8pt; }
+  #dashboard .reveal { opacity: 1; transform: none; }
+}
+
 @media (max-width: 767.98px) {
   :root { --nav-height: 66px; }
+  .dashboard-heading { align-items: flex-start; flex-direction: column; }
+  .dashboard-export { margin-bottom: 0; }
   .hero { min-height: 620px; }
   .hero::before { width: 90%; opacity: .38; }
   .hero-inner { padding-block: 4rem; }

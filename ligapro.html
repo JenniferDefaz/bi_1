@@ -28,7 +28,7 @@
           <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
           <li class="nav-item"><a class="nav-link" href="#posiciones">Posiciones</a></li>
           <li class="nav-item"><a class="nav-link" href="#decisiones-liga">Decisiones</a></li>
-          <li class="nav-item ms-lg-2"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" title="Cambiar tema"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i></button></li>
+          <li class="nav-item ms-lg-2"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" title="Cambiar tema"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i><span>Modo oscuro</span></button></li>
         </ul>
       </div>
     </div>
@@ -68,7 +68,7 @@
 
     <section class="section-pad" id="dashboard">
       <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">02 · Vista ejecutiva</span><h2 class="mt-3">El pulso del torneo</h2><p class="lead-copy">Filtra un club para destacar su rendimiento y ajusta el tramo de fechas para examinar la trayectoria.</p></div>
+        <div class="dashboard-heading reveal"><div class="section-heading"><span class="eyebrow">02 · Vista ejecutiva</span><h2 class="mt-3">El pulso del torneo</h2><p class="lead-copy">Filtra un club para destacar su rendimiento y ajusta el tramo de fechas para examinar la trayectoria.</p></div><button class="btn btn-brand dashboard-export" type="button" id="export-dashboard"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Exportar en PDF</button></div>
         <div class="surface filter-bar mb-4 reveal"><div class="row g-3 align-items-end">
           <div class="col-md-5"><label for="team-filter">Equipo seleccionado</label><select class="form-select" id="team-filter" aria-label="Filtrar dashboard por equipo"><option value="all">Todos los equipos</option></select></div>
           <div class="col-md-7"><div class="d-flex justify-content-between"><label for="round-filter">Hasta la fecha</label><output id="round-output" for="round-filter">Fecha 30</output></div><input class="form-range" type="range" id="round-filter" min="1" max="30" value="30" aria-label="Seleccionar última fecha para evolución de puntos"><div class="d-flex justify-content-between small text-muted-custom"><span>F. 1</span><span>F. 30</span></div></div>
