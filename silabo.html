@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sílabo interactivo de Sistemas de Información para la Inteligencia de Negocios en la Universidad Técnica de Cotopaxi.">
+  <title>Sílabo · Sistemas de Información para la Inteligencia de Negocios | BI al día</title>
+  <link rel="icon" href="img/bi-mark.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="js/silabo-data.js" defer></script>
+  <script src="js/silabo.js" defer></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-mark" aria-hidden="true"><i class="bi bi-bar-chart-line-fill"></i></span>BI al día</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavigation" aria-controls="siteNavigation" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="siteNavigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Fundamentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="ligapro.html">BI + LigaPro</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="silabo.html">Sílabo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#unidades">Unidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#calendario">Evaluaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bibliografia">Bibliografía</a></li>
+          <li class="nav-item ms-lg-2"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" title="Cambiar tema"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i><span>Modo oscuro</span></button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero silabo-hero" id="inicio">
+      <div class="container hero-inner">
+        <span class="eyebrow">Universidad Técnica de Cotopaxi · Sede Latacunga</span>
+        <div class="silabo-hero-meta"><span id="hero-code"></span><span id="hero-cycle"></span><span id="hero-period"></span></div>
+        <h1 id="silabo-title"></h1>
+        <p id="hero-institution"></p>
+        <div class="hero-actions"><a class="btn btn-brand" href="#unidades">Ver unidades <i class="bi bi-arrow-down-right ms-1" aria-hidden="true"></i></a><button class="btn btn-outline-custom silabo-print" type="button" data-print-silabo><i class="bi bi-printer" aria-hidden="true"></i> Imprimir / Guardar PDF</button></div>
+      </div>
+    </header>
+
+    <section class="section-pad" id="ficha" aria-labelledby="ficha-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Datos de la asignatura</span><h2 class="mt-3" id="ficha-title">Ficha técnica</h2></div>
+        <div class="row g-3" id="technical-grid"></div>
+        <div class="row g-3 mt-2" id="hours-counters" aria-label="Distribución de horas"></div>
+      </div>
+    </section>
+
+    <section class="section-pad surface-soft" id="proposito" aria-labelledby="proposito-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Sentido formativo</span><h2 class="mt-3" id="proposito-title">Del conocimiento a la decisión</h2></div>
+        <div class="row g-3" id="purpose-cards"></div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="horas" aria-labelledby="hours-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">144 horas · tres componentes</span><h2 class="mt-3" id="hours-title">Distribución del aprendizaje</h2><p class="lead-copy">Compara la carga horaria por componente, unidad y tema.</p></div>
+        <div class="row g-3">
+          <div class="col-lg-5 reveal"><article class="surface silabo-chart-card"><h3>Horas por componente</h3><p class="small">Docencia, prácticas y trabajo autónomo.</p><div class="silabo-chart-box"><canvas id="hours-doughnut" role="img" aria-label="Gráfica de dona con horas de docencia, prácticas y trabajo autónomo"></canvas></div></article></div>
+          <div class="col-lg-7 reveal"><article class="surface silabo-chart-card"><h3>Componentes por unidad</h3><p class="small">Distribución apilada de las horas de cada unidad.</p><div class="silabo-chart-box"><canvas id="hours-units" role="img" aria-label="Gráfica de barras apiladas con horas por unidad"></canvas></div></article></div>
+          <div class="col-12 reveal"><article class="surface silabo-chart-card"><h3>Docencia por tema</h3><p class="small">Cada barra se identifica con el color de su unidad.</p><div class="unit-chart-legend" id="topic-legend" aria-label="Leyenda de colores por unidad"></div><div class="silabo-chart-box silabo-chart-box--topics"><canvas id="hours-topics" role="img" aria-label="Gráfica horizontal de horas de docencia por tema"></canvas></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad surface-soft" id="unidades" aria-labelledby="units-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Ruta de aprendizaje</span><h2 class="mt-3" id="units-title">Unidades de aprendizaje</h2><p class="lead-copy">Explora resultados, metodología, temas, estrategias y evaluación de cada unidad.</p></div>
+        <div class="silabo-unit-tabs reveal" id="unit-tabs" role="tablist" aria-label="Unidades del sílabo"></div>
+        <div id="unit-panels"></div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="calendario" aria-labelledby="calendar-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">12 de octubre de 2026 – 21 de febrero de 2027</span><h2 class="mt-3" id="calendar-title">Ritmo del período</h2><p class="lead-copy">Las evaluaciones se actualizan según la fecha actual de tu dispositivo.</p></div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5 reveal"><article class="surface calendar-summary"><span class="eyebrow">Próximo hito</span><h3 id="next-evaluation-title" class="mt-3"></h3><p id="next-evaluation-date"></p><div class="countdown-grid" id="countdown" aria-live="polite"></div><p class="small mb-0" id="calendar-status"></p></article></div>
+          <div class="col-lg-7 reveal"><article class="surface calendar-track"><div class="d-flex justify-content-between gap-3"><h3>Evaluaciones</h3><span id="period-percent" class="silabo-percent"></span></div><div class="progress silabo-progress mt-3" role="progressbar" aria-label="Porcentaje del período académico transcurrido" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" id="period-progress"></div></div><div class="period-line" id="evaluation-timeline"></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad surface-soft" id="habilidades" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Aprendizaje integral</span><h2 class="mt-3" id="skills-title">Habilidades blandas</h2><p class="lead-copy">Activa cada habilidad para ver cómo se trabaja en la asignatura.</p></div>
+        <div class="row g-3" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="proyecto" aria-labelledby="project-title">
+      <div class="container">
+        <article class="plastrack-panel reveal">
+          <div class="plastrack-copy"><span class="eyebrow">Investigación formativa · Proyecto articulador</span><h2 class="mt-3" id="project-title"></h2><p id="project-description"></p></div>
+          <div class="plastrack-flow" id="project-flow" aria-label="Flujo del proyecto articulador"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-pad surface-soft" id="bibliografia" aria-labelledby="bibliography-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Lecturas y recursos</span><h2 class="mt-3" id="bibliography-title">Bibliografía</h2><p class="lead-copy">Filtra los recursos por título y abre el material en una nueva pestaña.</p></div>
+        <div class="bibliography-search reveal"><label class="form-label" for="bibliography-filter">Buscar recurso</label><input class="form-control" type="search" id="bibliography-filter" placeholder="Escribe parte de un título" autocomplete="off"></div>
+        <div class="row g-3" id="bibliography-groups"></div>
+        <p class="small mt-3 d-none" id="bibliography-empty" role="status">No hay recursos que coincidan con la búsqueda.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" id="docente" aria-labelledby="teacher-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Acompañamiento académico</span><h2 class="mt-3" id="teacher-title">Perfil del docente</h2></div>
+        <div class="row g-4">
+          <div class="col-lg-4 reveal"><article class="surface teacher-card"><span class="icon-box"><i class="bi bi-person-workspace" aria-hidden="true"></i></span><h3 id="teacher-name" class="h4 mt-3"></h3><p id="teacher-email"></p><a class="btn btn-brand" id="teacher-contact"><i class="bi bi-envelope" aria-hidden="true"></i> Escribir al docente</a></article></div>
+          <div class="col-lg-8 reveal"><div class="row g-3"><div class="col-md-6"><article class="surface teacher-timeline"><h3>Formación</h3><ol id="teacher-education"></ol></article></div><div class="col-md-6"><article class="surface teacher-timeline"><h3>Experiencia</h3><ol id="teacher-experience"></ol></article></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad surface-soft" id="autoevaluacion" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Comprueba lo esencial</span><h2 class="mt-3" id="quiz-title">Mini autoevaluación</h2><p class="lead-copy">Cinco preguntas breves para comprobar tu lectura del sílabo.</p></div>
+        <section class="surface quiz-shell reveal" aria-label="Autoevaluación interactiva del sílabo">
+          <div class="quiz-head"><div><strong>Reto del sílabo</strong><div class="small text-muted-custom">Elige una opción en cada pregunta.</div></div><div class="quiz-score" id="silabo-score" aria-live="polite">0 / 5</div></div>
+          <div class="silabo-quiz-body" id="silabo-quiz"></div>
+          <div class="silabo-quiz-result" id="silabo-quiz-result" role="status" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+
+    <div class="silabo-print-end"><button class="btn btn-brand silabo-print" type="button" data-print-silabo><i class="bi bi-printer" aria-hidden="true"></i> Imprimir / Guardar PDF</button></div>
+  </main>
+
+  <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>BI al día · Aprender a decidir con datos</span><div class="d-flex flex-wrap gap-3"><a href="index.html">Fundamentos</a><a href="ligapro.html">BI + LigaPro</a><a href="silabo.html" aria-current="page">Sílabo</a><a href="#inicio">Volver arriba</a></div></div></footer>
+</body>
+</html>
